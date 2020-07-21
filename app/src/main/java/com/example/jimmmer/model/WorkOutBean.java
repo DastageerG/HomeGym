@@ -1,20 +1,19 @@
 package com.example.jimmmer.model;
 
+import java.sql.Time;
+
 public class WorkOutBean
 {
     private String workOutName;
     private int workOutPicResID;
+    private int time;
 
-    public WorkOutBean(String workOutName, int workOutPicResID)
+    public WorkOutBean(String workOutName, int workOutPicResID, int time)
     {
         this.workOutName = workOutName;
         this.workOutPicResID = workOutPicResID;
-    } //
-
-    public WorkOutBean()
-    {
-        //
-    } //
+        this.time = time;
+    }//
 
     public String getWorkOutName()
     {
@@ -34,7 +33,17 @@ public class WorkOutBean
     public void setWorkOutPicResID(int workOutPicResID)
     {
         this.workOutPicResID = workOutPicResID;
-    } //
+    }
+
+    public int getTime()
+    {
+        return time;
+    }
+
+    public void setTime(int time)
+    {
+        this.time = time;
+    }//
 
     @Override
     public String toString()
@@ -42,6 +51,7 @@ public class WorkOutBean
         return "WorkOutBean{" +
                 "workOutName='" + workOutName + '\'' +
                 ", workOutPicResID=" + workOutPicResID +
+                ", time=" + time +
                 '}';
     }
 }
