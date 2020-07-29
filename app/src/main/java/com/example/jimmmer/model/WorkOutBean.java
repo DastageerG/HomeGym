@@ -6,7 +6,7 @@ public class WorkOutBean
 {
     private String workOutName;
     private int workOutPicResID;
-    private int time;
+    private int time; // i know  integer for time is not Good but its okay for me on the first try
 
     public WorkOutBean(String workOutName, int workOutPicResID, int time)
     {

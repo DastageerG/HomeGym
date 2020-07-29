@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,22 +18,33 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.jimmmer.R;
 
-public class TimerDialogueFragment extends DialogFragment
+public class CounterDialogue extends DialogFragment
 {
-    TextView textView;
+    private TextView textViewCounter,textViewWorkOutName;
+    private ImageView imageViewWorkOut; // image for workout
+    int countDownTime  = 10; // count down is 10 initially
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.timer_dialogue_frag,container,false);
-        textView = view.findViewById(R.id.textViewTimerDialog);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-     CountDownTimer countDownTimer = new CountDownTimer(5000,1000)
+
+        textViewCounter = view.findViewById(R.id.textViewTimerDialogCounter);
+        textViewWorkOutName = view.findViewById(R.id.textViewTimerDialogWorkoutName);
+        imageViewWorkOut = view.findViewById(R.id.imageViewTimerDialogue);
+
+        Bundle bundle = getArguments();
+        textViewWorkOutName.setText(bundle.getString("workOutName"));
+        imageViewWorkOut.setImageResource(bundle.getInt("workOutImgResId"));
+
+    //
+     CountDownTimer countDownTimer = new CountDownTimer(countDownTime*1000,1000)
      {
          @Override
          public void onTick(long millisUntilFinished)
          {
-             textView.setText(""+millisUntilFinished/1000);
+             textViewCounter.setText(""+millisUntilFinished/1000);
          }
 
          @Override
@@ -42,6 +54,7 @@ public class TimerDialogueFragment extends DialogFragment
          } //
      };
      countDownTimer.start();
+
         return view;
     }
 

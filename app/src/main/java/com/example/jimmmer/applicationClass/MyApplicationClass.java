@@ -12,10 +12,9 @@ import java.util.Random;
 
 public  class MyApplicationClass extends Application
 {
-    public  static  int minutes =  0;
-    public static List<WorkOutBean> exercisesChosenList;
-    public static int random_exercise;
-    public static List<Integer> listOfNumbersGenerated = new ArrayList();
+    public  static  int minutes =  0; // variable for no of minutes
+    public static List<WorkOutBean> exercisesChosenList;  // list for any five exercises
+    int random_exercise; // variable for generating a random number for an exercise to be chosen from array below
     public static WorkOutBean[] totalExercisesArray =
             {
                     new WorkOutBean("Bench Press", R.drawable.bench_press,3) ,
@@ -37,24 +36,25 @@ public  class MyApplicationClass extends Application
     public  void onCreate()
     {
         super.onCreate();
-
         exercisesChosenList = new ArrayList<>();
-
         Random random = new Random();
 
         for(int i = 0;i<5;i++)
         {
-            random_exercise = random.nextInt(13); // is of Int type
-            listOfNumbersGenerated.add(random_exercise);
-            exercisesChosenList.add(totalExercisesArray[random_exercise]);
+            random_exercise = random.nextInt(13); // generating a random number
+
+            exercisesChosenList.add(totalExercisesArray[random_exercise]); // adding a the WorkoutBean object in List
+
+            // here i don't want the same random generated number to be added in exercise but i don't know how to do it
         } //
 
         for(WorkOutBean bean:exercisesChosenList)
         {
-            minutes = minutes+bean.getTime();
+            minutes = minutes+bean.getTime(); // getting total number of minutes from chosen exercises
+            // total minutes for oneSet
 
         }
-        Log.d("minutesLog", "onCreate: "+minutes);
+       // Log.d("minutesLog", "onCreate: "+minutes);
 
     }
 }

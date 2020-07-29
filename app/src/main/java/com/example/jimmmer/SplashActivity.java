@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity
             public void run()
             {
                 startActivity(new Intent(SplashActivity.this,MainActivity.class));
-               // overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
+               //overridePendingTransition(R.anim.fade_out, R.anim.fade_in);
                 finish();
 
 

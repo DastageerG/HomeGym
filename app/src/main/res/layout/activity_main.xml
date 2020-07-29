@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:background="#F6F6F6"
     tools:context=".MainActivity">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleViewMainActivity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/button_normal"
+                android:background="@drawable/circle_button_normal"
                 android:text="−"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
@@ -52,7 +53,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/button_normal"
+                android:background="@drawable/circle_button_normal"
                 android:text="1"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
@@ -64,7 +65,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/button_normal"
+                android:background="@drawable/circle_button_normal"
                 android:text="+"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
@@ -92,7 +93,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/button_normal"
+            android:background="@drawable/circle_button_normal"
             android:src="@drawable/forward"
             android:textColor="@android:color/white"
             android:textSize="30dp" />
